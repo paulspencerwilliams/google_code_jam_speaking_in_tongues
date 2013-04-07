@@ -27,16 +27,13 @@ class GooglereseConverter
                  'w' => 'f', 
                  'x' => 'm', 
                  'y' => 'a', 
-                 'z' => 'q'}
+                 'z' => 'q',
+                 "\n" => ""}
   end
   
   def to_english(googlerese)
-    english = ""
-    googlerese.split("").each do |c|
-      if @mapping[c]
-        english << @mapping[c] 
-      end
-    end
-    english
+    english =  googlerese.each_char.inject("") { |result, element| result << @mapping[element]}
+    english 
   end
+
 end
