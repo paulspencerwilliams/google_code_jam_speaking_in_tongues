@@ -1,5 +1,5 @@
 
-Given(/^the Googlerese is "(.*?)"$/) do |input|
+Given(/^the Googlerese is$/) do |input|
   steps %{
     Given a file named "input.txt" with:
       """
@@ -15,7 +15,7 @@ When /^the translator is run$/ do
   }
 end
 
-Then(/^it should output "(.*?)"$/) do |output|
+Then(/^it should output$/) do |output|
   steps %{
     Then it should pass with:
       """
