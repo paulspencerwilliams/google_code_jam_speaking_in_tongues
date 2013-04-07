@@ -5,7 +5,7 @@ language_converter=GooglereseConverter.new
 number = 1
 File.open(ARGV[0]) do |f|
   f.each_line do |line|
-    STDOUT << 'Case #' <<  number.to_s << ': ' << language_converter.to_english(line) << "\n"
+    STDOUT << "Case ##{number.to_s}: #{language_converter.to_english(line)}\n"
     number = number + 1
   end
 end
